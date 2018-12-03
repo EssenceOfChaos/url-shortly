@@ -19,18 +19,18 @@ class UrlsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show url" do
-    get url_url(@url), as: :json
+    get url_for(@url), as: :json
     assert_response :success
   end
 
   test "should update url" do
-    patch url_url(@url), params: { url: { clicks: @url.clicks, original: @url.original, shortened: @url.shortened, title: @url.title } }, as: :json
+    patch url_for(@url), params: { url: { clicks: @url.clicks, original: @url.original, shortened: @url.shortened, title: @url.title } }, as: :json
     assert_response 200
   end
 
   test "should destroy url" do
     assert_difference('Url.count', -1) do
-      delete url_url(@url), as: :json
+      delete url_for(@url), as: :json
     end
 
     assert_response 204
