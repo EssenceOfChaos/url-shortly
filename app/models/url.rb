@@ -1,11 +1,11 @@
 class Url < ApplicationRecord
-  # Shape of a url
+  # Shape of the url
   # t.string :original
   # t.string :shortened
   # t.string :title
   # t.integer :clicks, :default => 0
 
-  # validates :original, presence: true, on: :create
+  validates :original, presence: true, on: :create
   # validates_format_of :original,
   #   with: /\A(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@,!:%_\+.~#?&\/\/=]*)?\z/
   before_create :shorten
@@ -17,10 +17,5 @@ class Url < ApplicationRecord
     chars = ['0'..'9','A'..'Z','a'..'m'].map{|range| range.to_a}.flatten
     self.shortened = 6.times.map{chars.sample}.join
   end
-
-  def get_page_title
-    FetchTitleJob.perform(self.id, self.original)
-  end
-
 
 end
