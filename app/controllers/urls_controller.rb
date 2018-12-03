@@ -3,8 +3,8 @@ class UrlsController < ApplicationController
 
   # GET /urls
   def index
-    @url = Url.find(params[:id])
-    render json: @url
+    @urls = Url.all
+    render json: @urls
   end
 
   # Redirect to original url given shortened url
