@@ -1,15 +1,18 @@
 class UrlsController < ApplicationController
   before_action :set_url, only: [:show, :update, :destroy]
 
-  # GET /urls
+  # GET /urls - order by desc aka highest number of clicks first
   def index
-    @urls = Url.all
+    @urls = Url.order(clicks: :desc)
     render json: @urls
   end
 
-  # Redirect to original url given shortened url
+  # Redirect to original url given shortened url, increment clicks
   def show
-    redirect_to @url.original
+    if redirect_to @url.original
+      @url.clicks += 1
+      @url.save
+    end
   end
 
   # POST /urls

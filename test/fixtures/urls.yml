@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  original: MyString
-  shortened: MyString
-  title: MyString
+  original: http://example.com/extra/long/path/to/file
+  shortened: abc123
+  title: Some Awesome Site
   clicks: 1
 
 two:
-  original: MyString
-  shortened: MyString
-  title: MyString
-  clicks: 1
+  original: http://fakeaddress.com
+  shortened: g4HlI1
+  title: Ruby on Rails
+  clicks: 8

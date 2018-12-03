@@ -1,17 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe UrlsController, type: :controller do
-  describe "GET #show" do
-    before :each do
-      @url = create(:url, original: "example.com/extra/long/link")
-      @url.sanitize
-      @url.save
+  describe "GET index" do
+    it "has a 200 status code" do
+      get :index
+      expect(response.status).to eq(200)
     end
-
-    it "has a 302 status code" do
-      get :show, params: { shortened: @url.shortened}
-      expect(response.status).to eq(302)
-    end
-
   end
 end
