@@ -23,6 +23,8 @@ gem 'sucker_punch', '~> 2.0'
 gem 'pry'
 # Testing
 # rspec added to :dev and :test
+# HTTP requests
+gem 'httparty', '~> 0.13.7'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

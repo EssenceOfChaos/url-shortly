@@ -16,7 +16,7 @@ class UrlsController < ApplicationController
   def create
     @url = Url.new(url_params)
     @url.original = params[:url]
-    p @url
+    @url.title = FetchTitleJob.perform_now(@url)
 
     if @url.save
       render json: @url, status: :created
@@ -47,6 +47,6 @@ class UrlsController < ApplicationController
 
     # White list params
     def url_params
-      # params.require(:url).permit(:original, :shortened, :title, :clicks)
+      # passed in by w/ POST req via urls?url= <url_params>
     end
 end
