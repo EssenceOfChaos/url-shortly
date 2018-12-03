@@ -16,6 +16,7 @@ class UrlsController < ApplicationController
   def create
     @url = Url.new(url_params)
     @url.original = params[:url]
+    @url.sanitize
     @url.title = FetchTitleJob.perform_now(@url)
 
     if @url.save

@@ -10,3 +10,7 @@ class FetchTitleJob < ApplicationJob
   end
 end
 
+# Alternative method to retrieve the title that doesn't require a
+# 3rd party dep and uses regex with a string matcher
+# empty titles result in an empty string being returned("")
+# response = Net::HTTP.get(URI(url)) =~ /<title>(.*?)<\/title>/
