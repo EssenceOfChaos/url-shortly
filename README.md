@@ -14,7 +14,7 @@ A custom URL shortener service, built with Rails.
 
 ### POST
 
-Send a post request to the [Heroku](https://url-shortly.herokuapp.com/urls) endpoint passing in your long url as `?url=LONG-URL-HERE`.
+Send a post request to the [lilurl](http://lilurl.site/urls) endpoint passing in your long url as `?url=LONG-URL-HERE`.
 
 Example with Postman:
 ![Postman Example - POST](https://i.imgur.com/pdY2se6.png)
@@ -39,7 +39,7 @@ The response holds the database ID number, the original url, the shortened url h
 
 ### GET
 
-Send a get request to the [Heroku](https://url-shortly.herokuapp.com/) endpoint passing the shortened url to be redirected to the original url.
+Send a get request to the [lilurl](http://lilurl.site) endpoint passing the shortened url to be redirected to the original url.
 
 Example with Postman:
 ![Postman Example - GET](https://i.imgur.com/1tWFj9m.png)
