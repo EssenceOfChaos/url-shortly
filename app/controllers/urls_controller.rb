@@ -46,7 +46,8 @@ class UrlsController < ApplicationController
   private
     # Given a shortened url, return the original
     def set_url
-      @url = Url.find_by({shortened: params[:shortened]})
+      # @url = Url.find_by({shortened: params[:shortened]})
+      @url = Url.find(params[:shortened])
     end
 
     # White list params
