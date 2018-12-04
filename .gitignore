@@ -24,3 +24,7 @@
 
 # Ignore sensitive env info
 .env
+
+# ignore client dist files
+client/node_modules
+client/dist
