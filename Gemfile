@@ -11,7 +11,7 @@ gem 'sucker_punch', '~> 2.0'
 # Testing
 # rspec added to :dev and :test
 # HTTP requests
-gem 'httparty', '~> 0.13.7'
+gem 'httparty', '~> 0.21.0'
 # Metrics and Monitoring
 gem 'newrelic_rpm'
 ####################################
